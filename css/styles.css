@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  * ----------------
+  * Color Variables
+  * ----------------
+*/
+:root {
+  --main: #FCF8E8;
+  --secondary: #94B49F;
+  --tertiary: #ECB390;
+  --accent: #DF7861;
+}
+
+/*
+  * ---------------
+  * Helper Classes
+  * ---------------
+*/
+.visibility-hidden {
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+/*
+  * -----------
+  * Typography
+  * -----------
+*/
+
+main {
+  padding: 0 !important;
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
