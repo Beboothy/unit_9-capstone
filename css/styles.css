@@ -39,7 +39,8 @@ body {
   * -----------
 */
 
-main {
+#HeadWrap,
+header {
   padding: 0 !important;
 }
 
@@ -48,4 +49,18 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/*
+  * -------------
+  * Modal Styles
+  * -------------
+*/
+
+dialog {
+  max-width: 650px;
+  padding: 1rem;
+}
+dialog::backdrop {
+  background-color: rgba(117, 120, 191, 0.9);
 }

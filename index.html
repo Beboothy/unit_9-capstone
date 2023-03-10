@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <div class="container-fluid text-center">
+    <div id="HeadWrap" class="container-fluid text-center">
       <div class="p5 mb-4 bg-light rounded-2">
         <header class="container-fluid py-5">
           <h1 class="display-1 mt-5">Portfolio</h1>
@@ -19,32 +19,41 @@
     <nav>
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
+          <a class="nav-link active" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Project 1</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Project 2</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+          <a class="nav-link " href="#">Project 3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#">Project 4</a>
         </li>
       </ul>
     </nav>
+    <dialog id="Modal">
+      <div id="ModalInner"></div>
+      <!-- populate info here -->
+      </dialog>
     <main class="container">
       <div id="About" class="p1">
         <div class="avatar_icon">?</div>
         <div class="contact">Contact me</div>
       </div>
+      <div id="ProjectContainer">
+        <!-- populate sections here -->
+      </div>
       <section id="ProjectOne" class="project_wrapper">
-        <div class="project_modal">
+        <div class="project_info_container">
           <h2>Project Title</h2>
           <p class="project_bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="btn" onclick="closeModal()">Close</button>
+          <button class="btn" onclick="openProjectModal()">Open Modal</button>
+          <a href="https://beboothy.github.io/unit-5_photo_gallery/" target="_blank" class="github_pages_link">Photo Gallery</a> 
         </div>
-        <button class="btn" onclick="openProjectModal()">Open Modal</button>
-        <a href="#" class="github_pages_link"></a>
       </section>
     </main>
 
