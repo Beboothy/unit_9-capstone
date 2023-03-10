@@ -7,7 +7,7 @@ const projectData = [
     id: 'ProjectOne',
     h2: 'Project One',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    link: 'https://beboothy.github.io/unit-5_photo_gallery/'
+    link: 'https://beboothy.github.io/unit-3_accessible_form_project_submission/'
   },
   {
     id: 'ProjectTwo',
@@ -19,13 +19,13 @@ const projectData = [
     id: 'ProjectThree',
     h2: 'Project Three',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    link: 'https://beboothy.github.io/unit-5_photo_gallery/'
+    link: 'https://beboothy.github.io/unit-6_game_show_app/'
   },
   {
     id: 'ProjectFour',
     h2: 'Project Four',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    link: 'https://beboothy.github.io/unit-5_photo_gallery/'
+    link: 'https://beboothy.github.io/unit-8_employee_directory/'
   }
 ]
 
@@ -127,4 +127,49 @@ function closeModal() {
   modal.close();
 }
 
+// Help setting up observer from https://codepen.io/heatherthedev/pen/ajYQWK
+// Callback Observer for Nav
+const navupdate = (entries, observer) => {
+	entries.forEach((entry) => {
+		// verify the element is intersecting
+		if(entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+			// remove old active class
+			document.querySelector('.active').classList.remove('active');
+			// get id of the intersecting section
+			var id = entry.target.getAttribute('id');
+			// find matching link & add appropriate class
+			var newLink = document.querySelector(`[href="#${id}"]`).classList.add('active');
+		}
+	});
+}
 
+// observer start
+const options = {
+	threshold: 0.55
+}
+const observer = new IntersectionObserver(navupdate, options);
+
+// create sections array and call observer on each
+const sections = document.querySelectorAll('section');
+
+sections.forEach((section) => {
+	observer.observe(section);
+});
+
+
+// sticky header
+window.onscroll = function() {
+  setSticky();
+};
+
+nav = document.getElementById('nav');
+
+var sticky = nav.offsetTop;
+
+function setSticky() {
+  if(window.pageYOffset >= sticky) {
+    nav.classList.add('sticky')
+  } else {
+    nav.classList.remove('sticky')
+  }
+}

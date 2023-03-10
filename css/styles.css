@@ -39,16 +39,31 @@ body {
   * -----------
 */
 
+
+
+
 #HeadWrap,
 header {
   padding: 0 !important;
 }
 
-header {
+header, section {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Nav styles */
+#nav {
+  padding: 1rem 0;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
 }
 
 /*
