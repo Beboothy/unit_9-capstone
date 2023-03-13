@@ -149,6 +149,41 @@ header {
   z-index: 99;
 }
 
+/* Contact */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  display: inline-block;
+}
+
+a.social {
+  display: inline-block;
+  text-indent: -9999px;
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
+  opacity: .6;
+  transition: all .5s;
+}
+a.twitter {
+  background-image: url(../assets/twitter.svg);
+}
+a.linkedin {
+  background-image: url(../assets/linkedin.svg);
+}
+a.github {
+  background-image: url(../assets/github.svg);
+}
+a.social:hover {
+  opacity: 1;
+}
+
 /*
   * -------------
   * Modal Styles
@@ -171,6 +206,10 @@ dialog::backdrop {
 #Modal .project_info_container {
   padding-top: 50px;
   overflow: hidden;
+}
+
+#Modal .github_pages_link {
+  text-align: center;
 }
 
 .closeBtn {
@@ -196,10 +235,46 @@ dialog::backdrop {
 
 #About {
   background-color: var(--main);
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  background-image: url(../assets/me.png);
+  background-size: cover;
+  background-position: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+}
+
+/* #About h2 {
+  text-align: center;
+  font-weight: 600;
+} */
+
+#About p {
+  width: min(80%, 500px);
+  margin: 2rem auto;
 }
 
 section {
   padding: 0 1rem;
+}
+
+#ProjectOne,
+#ProjectTwo,
+#ProjectThree,
+#ProjectFour,
+#ProjectFive {
+  background-image: url(../assets/me.png);
+  background-size: 220px;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-attachment: fixed;
 }
 
 #ProjectOne {
@@ -230,7 +305,7 @@ section {
 
 .flex_trap {
   display: flex;
-  flex-wrap: nowrap;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -338,14 +413,20 @@ svg path {
   section .project_info_container button {
     display: none;
   }
-
-  .flex_trap {
-    flex-direction: column-reverse;
-  }
 }
 
 @media screen and (min-width: 1023px) {
   .flex_trap img {
     width: 400px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #ProjectOne,
+  #ProjectTwo,
+  #ProjectThree,
+  #ProjectFour,
+  #ProjectFive {
+    background-size: 25%;
   }
 }
