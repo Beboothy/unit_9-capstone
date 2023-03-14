@@ -151,37 +151,38 @@ header {
 
 /* Contact */
 
-ul {
+#About ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-ul li {
+#About ul li {
   display: inline-block;
 }
 
-a.social {
+#About a.social {
   display: inline-block;
-  text-indent: -9999px;
   margin-left: 5px;
-  width: 30px;
-  height: 30px;
-  background-size: 30px 30px;
+  width: 75px;
+  height: 75px;
   opacity: .6;
   transition: all .5s;
 }
-a.twitter {
-  background-image: url(../assets/twitter.svg);
-}
-a.linkedin {
-  background-image: url(../assets/linkedin.svg);
-}
-a.github {
-  background-image: url(../assets/github.svg);
-}
-a.social:hover {
+#About a.social:hover {
   opacity: 1;
+}
+#About svg {
+  position: static;
+  transform: none;
+  width: 60px; 
+  height: 60px;
+  background-color: transparent;
+  
+} 
+
+#About svg circle {
+  fill: var(--secondary) !important;
 }
 
 /*
